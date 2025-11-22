@@ -1,0 +1,152 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+.icon-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.font-size-controls {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--surface-bg);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.font-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.font-btn:first-child {
+  font-size: 0.8rem;
+}
+
+.font-btn:nth-child(2) {
+  font-size: 1rem;
+}
+
+.font-btn:last-child {
+  font-size: 1.2rem;
+}
+
+.font-btn:hover {
+  background: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.font-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .font-size-controls {
+    display: none;
+  }
+}

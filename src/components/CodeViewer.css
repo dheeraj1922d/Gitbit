@@ -1,0 +1,143 @@
+.code-viewer {
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.code-viewer.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  margin: 0;
+  border-radius: 0;
+}
+
+.code-viewer.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--code-header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.code-filename {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.code-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: var(--hover-bg);
+  transform: scale(1.05);
+}
+
+.action-label {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+.code-content {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.code-viewer.fullscreen .code-content {
+  max-height: calc(100vh - 60px);
+}
+
+.code-content pre {
+  margin: 0;
+  padding: 1.5rem;
+  background: var(--code-bg);
+}
+
+.code-content code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+/* Scrollbar styling */
+.code-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+  background: var(--surface-bg);
+}
+
+.code-content::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .code-header {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .code-filename {
+    font-size: 0.8rem;
+  }
+
+  .action-btn {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .code-content {
+    max-height: 400px;
+  }
+
+  .code-content pre {
+    padding: 1rem;
+  }
+
+  .code-content code {
+    font-size: 0.8rem;
+  }
+}
